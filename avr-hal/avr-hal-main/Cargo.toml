@@ -1,0 +1,45 @@
+[profile.dev]
+panic = "abort"
+lto = true
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"
+
+[workspace]
+members = [
+    # The generic hal definitions
+    "avr-hal-generic",
+
+    # MCU HAL crates
+    "mcu/atmega-hal",
+    "mcu/attiny-hal",
+
+    # Higher level crates
+    "arduino-hal",
+
+    # Examples
+    "examples/arduino-diecimila",
+    "examples/arduino-leonardo",
+    "examples/arduino-mega2560",
+    "examples/arduino-mega1280",
+    "examples/arduino-nano",
+    "examples/arduino-micro",
+    "examples/arduino-uno",
+    "examples/atmega2560",
+    "examples/nano168",
+    "examples/sparkfun-promicro",
+    "examples/sparkfun-promini-3v3",
+    "examples/sparkfun-promini-5v",
+    "examples/trinket-pro",
+    "examples/trinket",
+]
+exclude = [
+    # The RAVEDUDE! Yeah!
+    "ravedude",
+]
+resolver = "2"

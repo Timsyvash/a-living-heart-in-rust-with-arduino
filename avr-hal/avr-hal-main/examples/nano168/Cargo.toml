@@ -1,0 +1,20 @@
+[package]
+name = "nano168-examples"
+description = "Examples for the arduino clones with Atmega168 chip"
+version = "0.0.0"
+authors = ["David R. Morrison <drmorr@evokewonder.com>", "Franz Dietrich <dietrich@teilgedanken.de>"]
+edition = "2021"
+publish = false
+
+[dependencies]
+panic-halt = "1.0.0"
+ufmt = "0.2.0"
+nb = "1.1.0"
+embedded-hal = "1.0"
+
+[dependencies.arduino-hal]
+path = "../../arduino-hal/"
+features = ["nano168"]
+
+[dependencies.avr-device]
+version = "0.8.1"
